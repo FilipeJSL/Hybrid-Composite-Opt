@@ -1,0 +1,21 @@
+** Input file with fibre type 2 properties **
+*
+
+* Fibre Radius - R
+0.0053
+
+* Material type
+ELASTIC
+
+* Density
+0.0E+0
+
+* List of properties (according to material type)
+74E+3  0.2
+
+* Number of Hardening points
+0
+
+* List of Hardening points
+0.0  200
+0.0  200

@@ -1,0 +1,14 @@
+** Input file with the hybrid composite RVE properties **
+*
+
+* Total Fibre Volume Fraction - Vol_fibre_req
+0.5
+
+* Fibre 2 Relative Volume Fraction (Volume of type 2 fibres / Total volume of fibres)
+0.5
+
+* RVE Size (In-plane as function of fibre radius)
+5
+
+* RVE Thickness (Out-of-plane - fibre direction - size as function of fibre radius. Only used for 3D analysis.)
+1

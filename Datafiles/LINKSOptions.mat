@@ -1,0 +1,72 @@
+** Main Input File for MSP_Random_RVE.m **
+*
+
+* Title (Problem title)
+Random RVE with inclusions and voids
+
+* Prescribed Deformation Gradient (1, 2, 12, 21, 112, 212, 2112 or 3)
+1
+
+* Stretch Ratio
+1.01
+
+* Boundary Condition (Linear_Condition Periodic_Condition Uniform_Traction_Condition or Mortar_Periodic_Condition) (Separated by spaces)
+Linear_Condition
+
+* Analysis Type (2 for plane strain, 6 for 3D) 
+6
+
+* Number of Increments
+3
+
+* Maximum number of consecutive increment cuts
+6
+
+* Convergence tolerance
+1.0E-4
+
+* Lower Step Length Value (Usually = 0.05)
+0.05
+
+* Upper Step Length Value (Usually = 5)
+5
+
+* Maximum Number of Line Searches (Usually = 5)
+5
+
+* Solver (MA41 or PARDISO)
+PARDISO
+
+* Parallel Solver (Number of threads)
+2
+
+* VTK output options for Paraview (BINARY, ASCII, DISCONTINUOUS)
+BINARY
+
+* Non-local formulation (ON/OFF)
+OFF
+
+** The following parameters are only needed if Non-local is ON
+* Number of non-local materials
+1
+
+* Non-local materials IDs (1 - matrix, 2 - inclusions)
+1
+
+* Non-local radius
+1.0
+
+* Non-local interaction (ON/OFF)
+OFF
+
+* Non-local weight function (1 - Gauss distribution, 2 - Bell shaped)
+1
+
+* Symmetrisation of the non-local averaging operator (ON/OFF)
+OFF
+
+* Non-local averaging type (EULERIAN, LAGRANGIAN)
+LAGRANGIAN
+
+* Maximum Gauss points inside circunference
+200

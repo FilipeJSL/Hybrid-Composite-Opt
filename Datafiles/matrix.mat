@@ -1,0 +1,18 @@
+** Input file with matrix properties **
+*
+
+* Material type
+VON_MISES
+
+* Density
+0.0E+0
+
+* List of properties (according to material type)
+3760  0.39
+
+* Number of Hardening points
+2
+
+* List of Hardening points
+0.0  94.9
+0.02 124.9
