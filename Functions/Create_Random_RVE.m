@@ -84,9 +84,16 @@ c = deltaoop*(Rmax+Rmin)/2; % RVE thickness (xx direction)
 
 %% Generate Fibre Distribution
 status = 0;
+counter = 0;
+max_counter = 20;
 while status == 0
+    counter=counter+1;
     status = RAND_PER_uSTRU_GEN_3D;
-    if status == 1, break; end
+    if status == 1, break;
+    elseif counter==max_counter
+        message='Error occured: Could not generate a RVE with such size and parameters. Check RAND_PER_uSTRU_GEN_3D.m (line 1380 and on)';
+        error(message);
+    end
 end
 
 %% Print image of fibre distribution

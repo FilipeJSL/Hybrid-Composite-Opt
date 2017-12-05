@@ -1,16 +1,16 @@
 ** Input file with fibre type 1 properties **
 *
 
-* Using the properties for the carbon fibre M50S
+* Using the properties for the fibre number #12
 
 * Fibre Radius - R
-0.00265
+0.002760
 
 * Material type
 UMATFIBRAND
 
 * Density
-0.0E+0
+0
 
 * List of properties (according to material type)
 74E+3  0.2 (not used for UMAT)
@@ -19,15 +19,15 @@ UMATFIBRAND
 12
 
 * List of Hardening points
-480e3      # Longitudinal Young modulus E11 [MPa]
-15e3       # Transverse Young modulus E22 [MPa]
-0.2        # Major Poisson coefficient nu12
-15e3       # Longitudinal shear modulus G12 [MPa]
-7e3        # Transverse shear modulus G23 [MPa]
+480000     # Longitudinal Young modulus E11 [MPa]
+14000      # Transverse Young modulus E22 [MPa]
+0.27       # Major Poisson coefficient nu12
+17000      # Longitudinal shear modulus G12 [MPa]
+17000      # Transverse shear modulus G23 [MPa]
 4600       # Initial tension failure stress sigma0 [MPa]
--0.5e-6    # Longitudinal thermal expansion alpha11
-15e-6      # Transverse thermal expansion alpha22
-4e-3       # Fracture toughness Gcf [N/mm]
+-6.3e-07   # Longitudinal thermal expansion alpha11
+1e-05      # Transverse thermal expansion alpha22
+2          # Fracture toughness Gcf [N/mm]
 9          # Weibull parameter m
 10         # Characteristic fibre length [mm]
            # Actual fibre length [mm]

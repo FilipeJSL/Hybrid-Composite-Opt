@@ -1,16 +1,16 @@
 ** Input file with fibre type 2 properties **
 *
 
-* Using the properties for the carbon fibre AS4
+* Using the properties for the fibre number #21
 
 * Fibre Radius - R
-0.0035
+0.005280
 
 * Material type
 UMATFIBRAND
 
 * Density
-0.0E+0
+0
 
 * List of properties (according to material type)
 74E+3  0.2 (not used for UMAT)
@@ -19,15 +19,15 @@ UMATFIBRAND
 12
 
 * List of Hardening points
-234e3      # Longitudinal Young modulus E11 [MPa]
-15e3       # Transverse Young modulus E22 [MPa]
-0.2        # Major Poisson coefficient nu12
-15e3       # Longitudinal shear modulus G12 [MPa]
-7e3        # Transverse shear modulus G23 [MPa]
-4275       # Initial tension failure stress sigma0 [MPa]
--0.5e-6    # Longitudinal thermal expansion alpha11
-15e-6      # Transverse thermal expansion alpha22
-4e-3       # Fracture toughness Gcf [N/mm]
-10.7       # Weibull parameter m
-12.7       # Characteristic fibre length [mm]
+99000      # Longitudinal Young modulus E11 [MPa]
+4200       # Transverse Young modulus E22 [MPa]
+0.36       # Major Poisson coefficient nu12
+2900       # Longitudinal shear modulus G12 [MPa]
+2900       # Transverse shear modulus G23 [MPa]
+3433       # Initial tension failure stress sigma0 [MPa]
+-4e-06     # Longitudinal thermal expansion alpha11
+5.4e-05    # Transverse thermal expansion alpha22
+6.63       # Fracture toughness Gcf [N/mm]
+10.3       # Weibull parameter m
+25         # Characteristic fibre length [mm]
            # Actual fibre length [mm]

@@ -334,7 +334,7 @@ for imaterial = 1:s_mat.nmats
             MatTypLoc = i+1;
         end
     end
-
+  
     for i = 1:mat_nhard
         mat_hardp(i) = A{1}(MatTypLoc);
         MatTypLoc = MatTypLoc + 1;
@@ -348,6 +348,9 @@ for imaterial = 1:s_mat.nmats
     if mat_nhard ~= 0
         s_mat.hardp(:,imaterial) = mat_hardp;
     end
+    
+    mat_hardp(1,:)={[]};
+    
 end
 
 clearvars -except s_info s_mat

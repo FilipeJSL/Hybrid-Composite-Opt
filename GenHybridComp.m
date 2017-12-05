@@ -22,10 +22,6 @@
 %   - the radius of the inclusions and voids (it is the same)             %
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Clear variables
-clear all
-close all
-clc
 
 %% Global variables
 global Abaqus elem_size_param
@@ -40,7 +36,7 @@ LINKSDat  = 'Datafiles\LINKSOptions.mat'; % File with LINKS datafile parameters
 Abaqus    = 'C:\SIMULIA\Commands\abaqus'; % Abaqus executable
 
 %% Define the number of realizations to be generated
-nrlz = 1;    % number of realizations
+nrlz = 1;    % Number of realizations
 
 %% Define the element size parameter
 elem_size_param = 3.0;

@@ -49,7 +49,7 @@
 %                                                                         %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-function [status]=RAND_PER_uSTRU_GEN_3D
+function [status]=RAND_PER_uSTRU_GEN_3D ()
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Definition of Global Variables                                          %
@@ -1376,10 +1376,18 @@ end
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
 Dif_error = 100*(Vol_fibre-Vol_fibre_req)/Vol_fibre_req;
-if Dif_error < 0
+Rel_fibre_1_Vol=Vol_fibre_1/(Vol_fibre_1+Vol_fibre_2);
+Fib_error=100*abs(Rel_fibre_1_Vol-Fibre_type_1)/Fibre_type_1;
+
+max_Fib_error=10;
+
+if Dif_error < 0 || Fib_error > max_Fib_error
     disp(' ');
     disp('Fibre Volume Fraction NOT REACHED');
     disp('Error in Volume Fibre [%]: '); disp(Dif_error);
+    sentence=['Error in relative Fibre 1 vs. Fibre 2 Volume [%]: ', num2str(Fib_error), ...
+        ' - Maximum allowed [%]: ', num2str(max_Fib_error)];
+    disp(sentence);
     status = 0;
 else
     disp(' ');
