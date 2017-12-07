@@ -8,6 +8,7 @@ tic
 %% Add optimization folder to Matlab path
 addpath('.\Functions Opt'); % Folder with all optimization related functions
 FibreMatDat  = 'Datafiles\FibreMaterialData.mat'; % Database file with all fibres' properties
+CurrentFolder = pwd;
 
 %% Load fibre properties database file
 [PropStruct] = GetFibreProps(FibreMatDat);
@@ -16,16 +17,22 @@ FibreMatDat  = 'Datafiles\FibreMaterialData.mat'; % Database file with all fibre
 GroupA=1;
 GroupB=3;
 
+% Checks the reference numbers associated with the fibres belonging to GroupA and GroupB
 AdmSet1=PropStruct.Reference(PropStruct.Group==GroupA);
 AdmSet2=PropStruct.Reference(PropStruct.Group==GroupB);
 AdmissibleSet={AdmSet1 AdmSet2};
 
 %% RVE Initialization (This module keeps the RVE fixed throughout the optimization process)
-[lb,ub,IntCon] = InitRVE(AdmissibleSet,PropStruct,GroupA,GroupB);
+[lb,ub,IntCon,fibre1Dat,fibre2Dat,matrixDat,LINKSDat,RealizationFolder,MeshFolder,...
+    FolderName,s_info]=InitRVE(AdmissibleSet,PropStruct,GroupA,GroupB);
 
 %% MATLAB's GA tool setup
-fitnessFunction = @(Fn)OptObjectiveFun(Fn, AdmissibleSet, PropStruct);  % Function handle to the fitness function
-numberOfVariables = 2;   % Number of decision variables
+%Function handle to the fitness function
+fitnessFunction = @(Fn)OptObjectiveFun(Fn,AdmissibleSet,PropStruct,fibre1Dat,...
+    fibre2Dat,matrixDat,LINKSDat,RealizationFolder,MeshFolder,FolderName, ...
+    CurrentFolder,s_info);
+% Number of decision variables
+numberOfVariables = 2;
 
 %Options to refine/loose the search for the optimal solution (there are other parameters that can be set)
 PopulationSize = 150;

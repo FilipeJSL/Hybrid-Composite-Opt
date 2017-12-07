@@ -1,2 +1,11 @@
+# Ignores every file in Datafiles/... directory
+Datafiles/
+
+# Except the FibreMaterialData.mat
+!Datafiles/FibreMaterialData.mat
+
 # Ignores every file in Output/... directory
 Output/
+
+#Ignores .asv files
+*.asv

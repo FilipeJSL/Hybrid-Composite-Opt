@@ -1,4 +1,4 @@
-function [] = PREGenHybridComp()
+function [fibre1Dat, fibre2Dat, matrixDat, LINKSDat, RealizationFolder, MeshFolder, FolderName, s_info] = PREGenHybridComp()
 
 %% Global variables
 global Abaqus elem_size_param
@@ -8,18 +8,19 @@ addpath('.\Functions'); % Folder with all functions
 RVEDat = 'Datafiles\RVE.mat ';       % File with the composite RVE properties
 fibre1Dat = 'Datafiles\fibre1.mat '; % File with the fibre type 1 properties
 fibre2Dat = 'Datafiles\fibre2.mat '; % File with the fibre type 2 properties
+matrixDat = 'Datafiles\matrix.mat '; % File with the matrix properties
 LINKSDat  = 'Datafiles\LINKSOptions.mat'; % File with LINKS datafile parameters
 
 Abaqus    = 'C:\SIMULIA\Commands\abaqus'; % Abaqus executable
 
 %% Define the element size parameter
-elem_size_param = 2.5;
+elem_size_param = 2;
 
 %% Read  RVE inputs
 [Input] = RVEinput(RVEDat,fibre1Dat,fibre2Dat);
 
 %% Read LINKS input options
-[s_info,~] = DataFile(LINKSDat);
+[s_info,~] = DataFile(LINKSDat,fibre1Dat,fibre2Dat,matrixDat);
 
 %% RVE Generation
 % Name of output folder

@@ -1,4 +1,6 @@
-function [lb, ub, IntCon] = InitRVE(AdmissibleSet, PropStruct, GroupA, GroupB)
+function [lb, ub, IntCon, fibre1Dat, fibre2Dat, matrixDat, LINKSDat, ...
+    RealizationFolder, MeshFolder, FolderName, s_info] = InitRVE(AdmissibleSet, ...
+    PropStruct, GroupA, GroupB)
 
 
 %% Bound constraints for the GA optimization problem
@@ -19,7 +21,7 @@ Fn(2) = randi([lb(2),ub(2)],1);
 WriteFibreDataFile(Fn,PropStruct);
 
 %% RVE and mesh generation (chopped version of GenHybridComp.m)
-PREGenHybridComp();
+[fibre1Dat,fibre2Dat,matrixDat,LINKSDat,RealizationFolder,MeshFolder,FolderName,s_info]=PREGenHybridComp();
 
 
 end

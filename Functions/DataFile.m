@@ -1,4 +1,4 @@
-function [s_info,s_mat]=DataFile(LINKSDat)
+function [s_info,s_mat]=DataFile(LINKSDat,fibre1Dat,fibre2Dat,matrixDat)
 %  U.PORTO-FEUP-DEMec
 %  Thesis
 %  Miguel Viera de Carvalho (em11129@fe.up.pt)(miguel.carvalho.129@gmail.com)
@@ -271,8 +271,7 @@ disp('Reading Material Properties')
 
 % Three distinct material types: 1 - fibre 1, 2 - fibre 2, 3 - matrix
 s_mat.nmats = 3;
-materials = {'Datafiles\fibre1.mat' 'Datafiles\fibre2.mat' ...
-             'Datafiles\matrix.mat'};
+materials = {fibre1Dat fibre2Dat matrixDat};
 
 formatSpec = '%s'; %Read file as string
 for imaterial = 1:s_mat.nmats
